@@ -27,6 +27,3 @@ class EuclideanDistance(object):
         for movie in movies:
             score = score + pow(scores1[movie] - scores2[movie],2);
         return 1/(1 + sqrt(score))    
-
-euclidean = EuclideanDistance();
-print(euclidean.distance('Lisa Rose', 'Gene Seymour'))            
