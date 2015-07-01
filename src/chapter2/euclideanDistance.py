@@ -5,7 +5,8 @@ Created on 2015. 7. 1.
 '''
 from chapter2.recommendations import critics
 from math import sqrt
-class EuclideanDistance(object):
+from chapter2.movieScore import MovieScore
+class EuclideanDistance(MovieScore):
     '''
     classdocs
     '''
@@ -14,13 +15,10 @@ class EuclideanDistance(object):
         '''
         Constructor
         '''
-    def distance(self, person1, person2):
-        movies = []
+    def getDistance(self, person1, person2):
+        movies = self.intersection(person1, person2)
         scores1 = critics[person1];
         scores2 = critics[person2];
-        for movie in scores1:
-            if movie in scores2:
-                movies.append(movie);
         score = 0;
         if not movies:
             return score
